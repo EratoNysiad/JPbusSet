@@ -1,0 +1,84 @@
+grf {
+	grfid:	"EN\0F\01";
+	name:	string(STR_GRF_NAME);
+	desc:	string(STR_GRF_DESC);
+	version:	1;
+	min_compatible_version: 1;
+	param {
+		LOADSPEEDPARAM {
+			type:    int;
+			name:    string(STR_LOAD);
+			desc:    string(STR_LOAD_DESC);
+			min_value: 0;
+			max_value: 2;
+			def_value: 1;
+			names: {
+				0: string(STR_LOAD_0);
+				1: string(STR_LOAD_1);
+				2: string(STR_LOAD_2);
+			};
+		}
+	}
+	param {
+		PARAM_CONST {
+			type:    int;
+			name:    string(STR_CC);
+			desc:    string(STR_CC_DESC);
+			min_value: 0;
+			max_value: 8;
+			def_value: 4;
+			names: {
+				0: string(STR_CC_0);
+				1: string(STR_CC_1);
+				2: string(STR_CC_2);
+				3: string(STR_CC_3);
+				4: string(STR_CC_4);
+				5: string(STR_CC_5);
+				6: string(STR_CC_6);
+				7: string(STR_CC_7);
+				8: string(STR_CC_8);
+			};
+		}
+	}
+	param {
+		PARAM_RUN {
+			type:    int;
+			name:    string(STR_RC);
+			desc:    string(STR_RC_DESC);
+			min_value: 0;
+			max_value: 4;
+			def_value: 8;
+			names: {
+				0: string(STR_CC_0);
+				1: string(STR_CC_1);
+				2: string(STR_CC_2);
+				3: string(STR_CC_3);
+				4: string(STR_CC_4);
+				5: string(STR_CC_5);
+				6: string(STR_CC_6);
+				7: string(STR_CC_7);
+				8: string(STR_CC_8);
+			};
+		}
+	}
+}
+
+//Useable cargo
+cargotable {PASS}
+
+disable_item(FEAT_ROADVEHS, 0, 115);
+
+basecost {
+	PR_BUILD_VEHICLE_ROAD:		PARAM_CONST-1;
+	PR_RUNNING_ROADVEH:			PARAM_RUN;
+	//Electric running costs are not used
+}
+
+roadtypetable {
+	ROAD,
+	ELRD
+}
+tramtypetable {
+	RAIL,
+	ELRL
+}

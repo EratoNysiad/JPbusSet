@@ -1,0 +1,36 @@
+##grflangid 0x01
+# 0x01 -> English
+
+# General GRF strings
+STR_GRF_NAME	:JPbus Set v0.1
+STR_GRF_DESC	:{WHITE}JP{RED}bus{WHITE}Set{}{}{WHITE}JP{RED}bus{WHITE}Set{BLACK} adds more {WHITE}Ja{RED}p{WHITE}an{BLACK} to your Japanese scene. This NewGRF adds buses and trams from Japan.{}{}License:GPL v3{}{}Coded by{}{LTBLUE}Erato Nysiad{}{}{BLACK}Sprites by{}{GREEN}Erato Nysiad
+
+#Parameter Strings
+STR_LOAD				:Load speed
+STR_LOAD_DESC			:Set the loading speed of this set
+STR_LOAD_0				:Slow
+STR_LOAD_1				:Normal (Default)
+STR_LOAD_2				:Fast
+
+STR_CC_0				:1/16x cost
+STR_CC_1				:1/8x cost
+STR_CC_2				:1/4x cost
+STR_CC_3				:1/2x cost
+STR_CC_4				:1x cost (Default)
+STR_CC_5				:2x cost
+STR_CC_6				:4x cost
+STR_CC_7				:8x cost
+STR_CC_8				:16x cost
+
+STR_CC					:Purchase cost multiplier
+STR_RC					:Running cost multiplier
+STR_CC_DESC				:This setting can be used to tweak the cost of the vehicles.
+STR_RC_DESC				:This setting can be used to tweak the cost of the vehicles.
+
+# Livery strings
+STR_LIV_TEST_1			:1Lost child. Report to Erato when found.
+STR_LIV_TEST_2			:2Lost child. Report to Erato when found.
+STR_LIV_DEFAULT			:Random (Default)
+
+# Vehicle strings
+STR_NAME_TEST			:Lost child. Report to Erato when found.

@@ -1,0 +1,100 @@
+//Taken from Dutch Trainset2
+
+template template_purchase(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x, y,  87, 16, -31, -12]
+}
+/*
+ * The templates below are derived from the 2cc trainset.
+ * Difference though is that the first four sprites should be aligned in 
+ * the bottom right of the blue boxes and the last four sprites in the
+ * bottom left. Correct positioning ingame is then done by templates below.
+*/
+template template_2cc_88(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -12]
+    [x+9  , y, 22, 21, -14, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -8, -12]
+    [x+88 , y,  8, 24,  -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21,  -8, -12]
+}
+template template_2cc_78(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -14]
+    [x+9  , y, 22, 21, -14, -13]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -8, -12]
+    [x+88 , y,  8, 24,  -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21,  -8, -13]
+}
+template template_2cc_68(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -16]
+    [x+9  , y, 22, 21, -14, -14]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -8, -12]
+    [x+88 , y,  8, 24,  -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21,  -8, -14]
+}
+template template_2cc_58(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -18]
+    [x+9  , y, 22, 21, -14, -15]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -8, -12]
+    [x+88 , y,  8, 24,  -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21,  -8, -15]
+}
+template template_2cc_48(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -20]
+    [x+9  , y, 22, 21, -14, -16]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -8, -12]
+    [x+88 , y,  8, 24,  -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21,  -8, -16]
+}
+template template_2cc_38(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -22]
+    [x+9  , y, 22, 21, -14, -17]//Changed
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -8, -12]
+    [x+88 , y,  8, 24,  -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21,  -8, -17]
+}
+template template_2cc_28(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -24]
+    [x+9  , y, 22, 21, -14, -18]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -8, -12]
+    [x+88 , y,  8, 24,  -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21,  -8, -18]
+}
+template template_2cc_18(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x    , y,  8, 24,  -3, -26]
+    [x+9  , y, 22, 21, -14, -19]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21,  -8, -12]
+    [x+88 , y,  8, 24,  -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21,  -8, -19]
+}

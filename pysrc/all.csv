@@ -1,0 +1,2 @@
+Name,STR,Tram,Articulated,LoadingSpeed,Intro,Outro,Mass,Speed,Air,Capacity,Power,Length,Purchase,Maintenance,Roadtype,PurchFile,PurchX,PurchY,32bppPurch,32bppPurchFile,PurchX,PurchY
+TEST,STR_NAME_TEST,0,0,LOADINGSPEED_URBAN,1950,0,1,100,0.1,100,100,8,12,15,ROAD,Template.png,177,1,1,Template_32.png,177,1

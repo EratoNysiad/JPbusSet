@@ -1,0 +1,6 @@
+VERSION        :
+VERSION_STRING :
+TITLE          :jpbus 
+FILENAME       :jpbus.grf
+REPO_HASH      :
+NEWGRF_VERSION :

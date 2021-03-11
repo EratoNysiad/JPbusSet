@@ -1,0 +1,68 @@
+spriteset (SPRITESET_TEST_0, "gfx/Template.png") {
+	template_2cc_88(1,1)
+}
+alternative_sprites (SPRITESET_TEST_0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/Template_32.png") {
+	template_2cc_88(1,1)
+}
+spriteset (SPRITESET_TEST_1, "gfx/Template.png") {
+	template_2cc_88(1,1)
+}
+alternative_sprites (SPRITESET_TEST_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/Template_32.png") {
+	template_2cc_88(1,1)
+}
+random_switch(FEAT_ROADVEHS, PARENT, switch_random_TEST) {
+	1: SPRITESET_TEST_0;
+	1: SPRITESET_TEST_1;
+}
+switch(FEAT_ROADVEHS,SELF,switch_TEST_GFX,cargo_subtype){
+    0: 	switch_random_TEST;
+	1:	SPRITESET_TEST_0;
+	2:	SPRITESET_TEST_1;
+}
+switch(FEAT_ROADVEHS,SELF,switch_TEST_livery,cargo_subtype){
+    0: 	return string(STR_LIV_DEFAULT);
+	1:	return string(STR_LIV_TEST_1);
+	2:	return string(STR_LIV_TEST_2);
+		return CB_RESULT_NO_TEXT;
+}
+
+spriteset (SPRITESET_PURCH_TEST, "gfx/Template.png") {
+	template_purchase(177,1)
+}
+
+alternative_sprites (SPRITESET_PURCH_TEST, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/Template_32.png") {
+	template_purchase(177,1)
+}
+
+item(FEAT_ROADVEHS, TEST, ITEM_TEST) {
+	property {
+		sprite_id: SPRITE_ID_NEW_ROADVEH;
+		running_cost_base: RUNNING_COST_ROADVEH;
+		climates_available: ALL_CLIMATES;
+		misc_flags: bitmask(ROADVEH_FLAG_AUTOREFIT);
+		road_type: ROAD;
+		refittable_cargo_classes: bitmask(CC_PASSENGERS);
+		default_cargo_type: PASS;
+		LOADINGSPEED_URBAN
+		tractive_effort_coefficient: 0.3;
+		refit_cost: 0;
+		reliability_decay:	12;
+		vehicle_life: 50;
+		name:	string(STR_NAME_TEST);
+		speed: 100 km/h;
+		air_drag_coefficient: 0.1;
+		introduction_date:	date(1950,01,01);
+		model_life:	VEHICLE_NEVER_EXPIRES;
+		cost_factor: 12;
+		running_cost_factor: 15;
+		power: 100 kW;
+		cargo_capacity: 100;
+		weight: 1 tons;
+		length: 8;
+	}
+	graphics {
+		default: switch_TEST_GFX;
+		purchase: SPRITESET_PURCH_TEST;
+		cargo_subtype_text: switch_TEST_livery;
+	}
+}

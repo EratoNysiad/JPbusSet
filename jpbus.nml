@@ -1,0 +1,282 @@
+# 1 "jpbus.pnml"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "jpbus.pnml"
+# 1 "src/header.pnml" 1
+grf {
+ grfid: "EN\0F\01";
+ name: string(STR_GRF_NAME);
+ desc: string(STR_GRF_DESC);
+ version: 1;
+ min_compatible_version: 1;
+ param {
+  LOADSPEEDPARAM {
+   type: int;
+   name: string(STR_LOAD);
+   desc: string(STR_LOAD_DESC);
+   min_value: 0;
+   max_value: 2;
+   def_value: 1;
+   names: {
+    0: string(STR_LOAD_0);
+    1: string(STR_LOAD_1);
+    2: string(STR_LOAD_2);
+   };
+  }
+ }
+ param {
+  PARAM_CONST {
+   type: int;
+   name: string(STR_CC);
+   desc: string(STR_CC_DESC);
+   min_value: 0;
+   max_value: 8;
+   def_value: 4;
+   names: {
+    0: string(STR_CC_0);
+    1: string(STR_CC_1);
+    2: string(STR_CC_2);
+    3: string(STR_CC_3);
+    4: string(STR_CC_4);
+    5: string(STR_CC_5);
+    6: string(STR_CC_6);
+    7: string(STR_CC_7);
+    8: string(STR_CC_8);
+   };
+  }
+ }
+ param {
+  PARAM_RUN {
+   type: int;
+   name: string(STR_RC);
+   desc: string(STR_RC_DESC);
+   min_value: 0;
+   max_value: 4;
+   def_value: 8;
+   names: {
+    0: string(STR_CC_0);
+    1: string(STR_CC_1);
+    2: string(STR_CC_2);
+    3: string(STR_CC_3);
+    4: string(STR_CC_4);
+    5: string(STR_CC_5);
+    6: string(STR_CC_6);
+    7: string(STR_CC_7);
+    8: string(STR_CC_8);
+   };
+  }
+ }
+}
+
+//Useable cargo
+cargotable {PASS}
+
+disable_item(FEAT_ROADVEHS, 0, 115);
+
+basecost {
+ PR_BUILD_VEHICLE_ROAD: PARAM_CONST-1;
+ PR_RUNNING_ROADVEH: PARAM_RUN;
+ //Electric running costs are not used
+}
+
+roadtypetable {
+ ROAD,
+ ELRD
+}
+tramtypetable {
+ RAIL,
+ ELRL
+}
+# 2 "jpbus.pnml" 2
+# 1 "src/sorting.pnml" 1
+
+
+
+
+
+
+sort(FEAT_ROADVEHS, [
+ 0x000
+]);
+# 3 "jpbus.pnml" 2
+# 1 "src/template.pnml" 1
+//Taken from Dutch Trainset2
+
+template template_purchase(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x, y, 87, 16, -31, -12]
+}
+/*
+
+ * The templates below are derived from the 2cc trainset.
+
+ * Difference though is that the first four sprites should be aligned in 
+
+ * the bottom right of the blue boxes and the last four sprites in the
+
+ * bottom left. Correct positioning ingame is then done by templates below.
+
+*/
+# 13 "src/template.pnml"
+template template_2cc_88(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x , y, 8, 24, -3, -12]
+    [x+9 , y, 22, 21, -14, -12]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21, -8, -12]
+    [x+88 , y, 8, 24, -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21, -8, -12]
+}
+template template_2cc_78(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x , y, 8, 24, -3, -14]
+    [x+9 , y, 22, 21, -14, -13]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21, -8, -12]
+    [x+88 , y, 8, 24, -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21, -8, -13]
+}
+template template_2cc_68(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x , y, 8, 24, -3, -16]
+    [x+9 , y, 22, 21, -14, -14]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21, -8, -12]
+    [x+88 , y, 8, 24, -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21, -8, -14]
+}
+template template_2cc_58(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x , y, 8, 24, -3, -18]
+    [x+9 , y, 22, 21, -14, -15]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21, -8, -12]
+    [x+88 , y, 8, 24, -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21, -8, -15]
+}
+template template_2cc_48(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x , y, 8, 24, -3, -20]
+    [x+9 , y, 22, 21, -14, -16]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21, -8, -12]
+    [x+88 , y, 8, 24, -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21, -8, -16]
+}
+template template_2cc_38(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x , y, 8, 24, -3, -22]
+    [x+9 , y, 22, 21, -14, -17]//Changed
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21, -8, -12]
+    [x+88 , y, 8, 24, -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21, -8, -17]
+}
+template template_2cc_28(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x , y, 8, 24, -3, -24]
+    [x+9 , y, 22, 21, -14, -18]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21, -8, -12]
+    [x+88 , y, 8, 24, -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21, -8, -18]
+}
+template template_2cc_18(x, y) {
+    //[left_x, upper_y, width, height, offset_x, offset_y]
+    [x , y, 8, 24, -3, -26]
+    [x+9 , y, 22, 21, -14, -19]
+    [x+32 , y, 32, 16, -16, -12]
+    [x+65 , y, 22, 21, -8, -12]
+    [x+88 , y, 8, 24, -3, -12-2]
+    [x+97 , y, 22, 21, -14, -12]
+    [x+120, y, 32, 16, -16, -12]
+    [x+153, y, 22, 21, -8, -19]
+}
+# 4 "jpbus.pnml" 2
+# 1 "src/loadspeed.pnml" 1
+# 5 "jpbus.pnml" 2
+
+# 1 "src/buses/TEST.pnml" 1
+spriteset (SPRITESET_TEST_0, "gfx/Template.png") {
+ template_2cc_88(1,1)
+}
+alternative_sprites (SPRITESET_TEST_0, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/Template_32.png") {
+ template_2cc_88(1,1)
+}
+spriteset (SPRITESET_TEST_1, "gfx/Template.png") {
+ template_2cc_88(1,1)
+}
+alternative_sprites (SPRITESET_TEST_1, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/Template_32.png") {
+ template_2cc_88(1,1)
+}
+random_switch(FEAT_ROADVEHS, PARENT, switch_random_TEST) {
+ 1: SPRITESET_TEST_0;
+ 1: SPRITESET_TEST_1;
+}
+switch(FEAT_ROADVEHS,SELF,switch_TEST_GFX,cargo_subtype){
+    0: switch_random_TEST;
+ 1: SPRITESET_TEST_0;
+ 2: SPRITESET_TEST_1;
+}
+switch(FEAT_ROADVEHS,SELF,switch_TEST_livery,cargo_subtype){
+    0: return string(STR_LIV_DEFAULT);
+ 1: return string(STR_LIV_TEST_1);
+ 2: return string(STR_LIV_TEST_2);
+  return CB_RESULT_NO_TEXT;
+}
+
+spriteset (SPRITESET_PURCH_TEST, "gfx/Template.png") {
+ template_purchase(177,1)
+}
+
+alternative_sprites (SPRITESET_PURCH_TEST, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "gfx/Template_32.png") {
+ template_purchase(177,1)
+}
+
+item(FEAT_ROADVEHS, TEST, 0x000) {
+ property {
+  sprite_id: SPRITE_ID_NEW_ROADVEH;
+  running_cost_base: RUNNING_COST_ROADVEH;
+  climates_available: ALL_CLIMATES;
+  misc_flags: bitmask(ROADVEH_FLAG_AUTOREFIT);
+  road_type: ROAD;
+  refittable_cargo_classes: bitmask(CC_PASSENGERS);
+  default_cargo_type: PASS;
+  loading_speed: (LOADSPEEDPARAM == 0) ? 10/2 : (LOADSPEEDPARAM == 2) ? 10*2 : 10;
+  tractive_effort_coefficient: 0.3;
+  refit_cost: 0;
+  reliability_decay: 12;
+  vehicle_life: 50;
+  name: string(STR_NAME_TEST);
+  speed: 100 km/h;
+  air_drag_coefficient: 0.1;
+  introduction_date: date(1950,01,01);
+  model_life: VEHICLE_NEVER_EXPIRES;
+  cost_factor: 12;
+  running_cost_factor: 15;
+  power: 100 kW;
+  cargo_capacity: 100;
+  weight: 1 tons;
+  length: 8;
+ }
+ graphics {
+  default: switch_TEST_GFX;
+  purchase: SPRITESET_PURCH_TEST;
+  cargo_subtype_text: switch_TEST_livery;
+ }
+}
+# 6 "jpbus.pnml" 2
